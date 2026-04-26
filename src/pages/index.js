@@ -121,13 +121,7 @@ const CONTENT = {
   en: {
     name: "Antonin Ribeaud",
     experience: "Independent since 2014",
-    subtitle: (
-      <>
-        Software Engineer · AI &amp; Solutions Architect
-        <br />
-        Paris <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg" alt="🇫🇷" className="emoji-flag" /> &amp; Dubai <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e6-1f1ea.svg" alt="🇦🇪" className="emoji-flag" />
-      </>
-    ),
+    subtitle: <>Software Engineer · AI &amp; Solutions Architect</>,
     headline: (
       <>
         AI systems, cloud platforms, and SaaS{" "}
@@ -149,13 +143,7 @@ const CONTENT = {
   fr: {
     name: "Antonin Ribeaud",
     experience: "Indépendant depuis 2014",
-    subtitle: (
-      <>
-        Développeur · IA &amp; Architecte Solutions
-        <br />
-        Paris <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg" alt="🇫🇷" className="emoji-flag" /> &amp; Dubaï <img src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e6-1f1ea.svg" alt="🇦🇪" className="emoji-flag" />
-      </>
-    ),
+    subtitle: <>Développeur · IA &amp; Architecte Solutions</>,
     headline: (
       <>
         Systèmes IA, plateformes cloud et SaaS{" "}
@@ -341,7 +329,7 @@ export default IndexPage
 export const Head = () => (
   <SEO
     title="Antonin Ribeaud | AI & Solutions Architect"
-    description="AI systems, cloud platforms, and SaaS, from design to production. Independent since 2014, Paris and Dubai."
+    description="AI systems, cloud platforms, and SaaS, from design to production. Independent since 2014."
   />
 )
 
