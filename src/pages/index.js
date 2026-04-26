@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import PortfolioLayout from "../components/portfolio-layout"
 import SEO from "../components/seo"
+import SelectedWork from "../components/selected-work"
 import trackEvent from "../hooks/use-track-event"
 
 const STICKY_NOTE_STYLES = [
@@ -308,6 +309,8 @@ const IndexPage = ({ data }) => {
           </div>
         ))}
       </section>
+
+      <SelectedWork />
 
       <section className="cta-bottom">
         <a
