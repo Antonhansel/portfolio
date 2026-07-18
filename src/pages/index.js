@@ -173,12 +173,13 @@ const CONTENT = {
   en: {
     name: "Antonin Ribeaud",
     experience: "Independent since 2014",
-    subtitle: <>Software Engineer · AI &amp; Solutions Architect</>,
+    subtitle: <>Fractional CTO / CPTO · Product, AI &amp; Architecture</>,
     headline: (
       <>
-        AI systems, cloud platforms, and SaaS from{" "}
-        <span className="portfolio-headline-accent">design</span> to{" "}
-        <span className="portfolio-headline-accent">production</span>
+        Product <span className="portfolio-headline-accent">vision</span>, tech{" "}
+        <span className="portfolio-headline-accent">leadership</span>, and AI
+        systems from <span className="portfolio-headline-accent">roadmap</span>{" "}
+        to <span className="portfolio-headline-accent">production</span>
         <span className="portfolio-headline-accent">.</span>
       </>
     ),
@@ -194,11 +195,13 @@ const CONTENT = {
   fr: {
     name: "Antonin Ribeaud",
     experience: "Indépendant depuis 2014",
-    subtitle: <>Développeur · IA &amp; Architecte Solutions</>,
+    subtitle: <>CTO / CPO à temps partagé · Produit, IA &amp; architecture</>,
     headline: (
       <>
-        Systèmes IA, plateformes cloud et SaaS de la{" "}
-        <span className="portfolio-headline-accent">conception</span> à la{" "}
+        <span className="portfolio-headline-accent">Vision</span> produit,{" "}
+        <span className="portfolio-headline-accent">leadership</span> tech et
+        systèmes IA de la{" "}
+        <span className="portfolio-headline-accent">roadmap</span> à la{" "}
         <span className="portfolio-headline-accent">production</span>
         <span className="portfolio-headline-accent">.</span>
       </>
