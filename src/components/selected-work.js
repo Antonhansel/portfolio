@@ -26,10 +26,9 @@ const SelectedWork = () => {
     <section className="realisations">
       <div className="real-head">
         <div>
-          <h2 className="real-title">Selected work, 2014 — present.</h2>
+          <h2 className="real-title">Selected work, 2014 to present.</h2>
           <p className="real-lede">
-            A partial record. Some clients are confidential; some work predates
-            anything worth listing here.
+            {"A partial record. Some clients are confidential;\nsome work predates anything worth listing here."}
           </p>
         </div>
         <div className="real-filters" aria-label="Filter selected work by tag">

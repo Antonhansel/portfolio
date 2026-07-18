@@ -9,8 +9,8 @@ const REALISATIONS = [
     period: "Jul — Nov 2024",
     tags: ["AI/ML", "Product", "Scale-up"],
     outcomes: [
-      "Designed and shipped a full-stack Document AI SaaS — secure chat with documents, multi-language OCR + PDF parsing, RAG over structured & unstructured data, smart chunking, semantic filtering and full source traceability",
-      "Admin dashboard with usage analytics, team access controls, custom prompts, API keys and usage-based pricing — LLM-agnostic backend (OpenAI, Claude, Mistral, custom) on a single VPS via Dokku",
+      "Designed and shipped a full-stack Document AI SaaS: secure chat with documents, multi-language OCR + PDF parsing, RAG over structured & unstructured data, smart chunking, semantic filtering and full source traceability",
+      "Admin dashboard with usage analytics, team access controls, custom prompts, API keys and usage-based pricing: LLM-agnostic backend (OpenAI, Claude, Mistral, custom) on a single VPS via Dokku",
       "Sold the IP and codebase in 2025",
     ],
     stack: [
@@ -32,7 +32,7 @@ const REALISATIONS = [
     tags: ["AI/ML", "Architecture", "Data"],
     outcomes: [
       "Engineered an ingestion + OCR + vectorization pipeline for millions of multilingual, multi-confidentiality documents",
-      "Designed high-throughput GCP microservices provisioned with Terraform — sub-second p95 semantic search across 30 brands",
+      "Designed high-throughput GCP microservices provisioned with Terraform: sub-second p95 semantic search across 30 brands",
       "Shipped semantic search, natural-language filters and a “Chat with your docs” interface combining multiple LLMs",
     ],
     stack: [
@@ -64,7 +64,7 @@ const REALISATIONS = [
     role: "CTO · Solutions Architect",
     tags: ["Product", "Scale-up"],
     outcomes: [
-      "Crypto auto-investing SaaS — DCA bots running on Binance, Kraken, FTX and Coinbase, with unlimited bots on Premium",
+      "Crypto auto-investing SaaS: DCA bots running on Binance, Kraken, FTX and Coinbase, with unlimited bots on Premium",
       "57k€ invested through the platform across 4,530 bot-executed trades",
       "Shut down once major exchanges started implementing DCA natively",
     ],
@@ -77,8 +77,8 @@ const REALISATIONS = [
     period: "2020 — 2024",
     tags: ["Architecture", "Data", "Full-stack"],
     outcomes: [
-      "Engineered an analytics platform processing 400M+ events/month — fault-tolerant, idempotent ETL workflows",
-      "Optimized real-time sales-KPI pipelines in Python/SQL — cut clicks-to-create-campaign by 50%",
+      "Engineered an analytics platform processing 400M+ events/month: fault-tolerant, idempotent ETL workflows",
+      "Optimized real-time sales-KPI pipelines in Python/SQL: cut clicks-to-create-campaign by 50%",
       "Automated CI/CD on GCP, Docker and GitLab for zero-downtime releases",
     ],
     stack: ["Python", "SQL", "React", "TypeScript", "Node.js", "GCP", "Docker", "GitLab CI"],
@@ -90,7 +90,7 @@ const REALISATIONS = [
     period: "2019 — 2020",
     tags: ["Leadership", "Product", "Scale-up"],
     outcomes: [
-      "Designed and shipped Malaysia's first fully online company-secretary service — registration, banking and accounting under one roof",
+      "Designed and shipped Malaysia's first fully online company-secretary service: registration, banking and accounting under one roof",
       "Cut incorporation time from weeks to hours through end-to-end automation",
       "Hired and led the engineering team; sold stake in 2020 (company still active)",
     ],
@@ -104,7 +104,7 @@ const REALISATIONS = [
     tags: ["Leadership", "Product", "Scale-up"],
     outcomes: [
       "Designed a secure, automated system for crypto transaction accounting and compliance",
-      "Shipped real-time digital-asset tracking — 100+ currencies, millions of transactions, worldwide client base",
+      "Shipped real-time digital-asset tracking: 100+ currencies, millions of transactions, worldwide client base",
       "Showcased at G20 Osaka 2019; team pivoted into Foundingbird when scaling stalled",
     ],
     stack: ["Node.js", "React", "TypeScript", "Postgres", "Web3"],
@@ -142,7 +142,7 @@ const REALISATIONS = [
     period: "2016 — 2017",
     tags: ["Mobile", "Full-stack"],
     outcomes: [
-      "React Native developer on core app features — carsharing, rentals, minicabs",
+      "React Native developer on core app features: carsharing, rentals, minicabs",
       "Owned the iOS release pipeline: App Store submissions and production rollouts",
       "Cross-platform mobility product",
     ],
@@ -162,7 +162,7 @@ const REALISATIONS = [
     stack: ["React", "Backbone", "JavaScript", "Node.js"],
   },
 
-  // Thinner cards — fill in and promote up the list as content lands.
+  // Thinner cards: fill in and promote up the list as content lands.
 
   {
     id: "epsor",
@@ -170,7 +170,7 @@ const REALISATIONS = [
     role: "Solutions Architect",
     tags: ["Architecture"],
     outcomes: [
-      "Event-driven microservices architecture for the fintech platform — Node.js services communicating over Kafka",
+      "Event-driven microservices architecture for the fintech platform: Node.js services communicating over Kafka",
     ],
     stack: ["Node.js", "Microservices", "Kafka"],
   },
@@ -181,7 +181,7 @@ const REALISATIONS = [
     tags: ["Architecture", "Scale"],
     outcomes: [
       "Engineered the broadcast engine powering a live, interactive game show",
-      "Thousands of concurrent viewers across 2 live shows per day — heavy concurrency and real-time delivery challenges",
+      "Thousands of concurrent viewers across 2 live shows per day: heavy concurrency and real-time delivery challenges",
     ],
     stack: ["Python", "AWS Live", "Firebase"],
   },

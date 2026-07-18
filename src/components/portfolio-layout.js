@@ -5,11 +5,10 @@ import useDomainTitle from "../hooks/use-domain-title"
 import trackEvent from "../hooks/use-track-event"
 
 const AVATAR_IMG_STYLE = { borderRadius: "50%" }
-const TESTIMONIALS_URL = "https://www.linkedin.com/in/antoninribeaud/details/recommendations/?detailScreenTabIndex=0"
 
 const PortfolioLayout = ({ avatar, author, navExtra, navLabels, children }) => {
   const displayTitle = useDomainTitle()
-  const labels = navLabels || { blog: "blog", bookCall: "book a call", testimonials: "see testimonials" }
+  const labels = navLabels || { blog: "blog", bookCall: "book a call" }
 
   return (
     <div className="portfolio-wrapper">
@@ -31,15 +30,6 @@ const PortfolioLayout = ({ avatar, author, navExtra, navLabels, children }) => {
         </div>
         <nav className="portfolio-header-nav">
           <Link to="/blog" className="nav-pill" onClick={() => trackEvent("click", "nav", "blog")}>{labels.blog}</Link>
-          <a
-            className="nav-pill"
-            href={TESTIMONIALS_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => trackEvent("click", "nav", "testimonials")}
-          >
-            {labels.testimonials}
-          </a>
           <a
             className="nav-pill nav-pill-primary"
             href="https://calendar.app.google/rGenB9JqgBh8xSyh8"

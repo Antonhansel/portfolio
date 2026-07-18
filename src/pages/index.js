@@ -6,34 +6,84 @@ import SEO from "../components/seo"
 import SelectedWork from "../components/selected-work"
 import trackEvent from "../hooks/use-track-event"
 
+// Material tonal containers (blue / green / orange / purple)
 const STICKY_NOTE_STYLES = [
-  {
-    pos: "top-left",
-    style: { backgroundColor: "#fff3cd", transform: "rotate(5deg)" },
-  },
-  {
-    pos: "top-right",
-    style: { backgroundColor: "#c8e6c9", transform: "rotate(-4deg)" },
-  },
-  {
-    pos: "bottom-left",
-    style: { backgroundColor: "#ffccbc", transform: "rotate(3deg)" },
-  },
-  {
-    pos: "bottom-right",
-    style: { backgroundColor: "#fff9c4", transform: "rotate(-5deg)" },
-  },
+  { pos: "top-left", style: { backgroundColor: "#d8e6ff" } },
+  { pos: "top-right", style: { backgroundColor: "#d3f2da" } },
+  { pos: "bottom-left", style: { backgroundColor: "#ffe3cc" } },
+  { pos: "bottom-right", style: { backgroundColor: "#e9e0ff" } },
 ]
+
+const TESTIMONIALS_URL =
+  "https://www.linkedin.com/in/antoninribeaud/details/recommendations/?detailScreenTabIndex=0"
+
+// LinkedIn profile photos (static/testimonials/)
+const TESTI_PHOTOS = {
+  "Ciprian Noaghiu": "/testimonials/ciprian.jpeg",
+  "Paula Alves": "/testimonials/paula.jpeg",
+  "Azeem Abu Bakar": "/testimonials/azeem.jpeg",
+}
+
+const TESTIMONIALS = {
+  en: {
+    title: "What clients say",
+    readOn: "Read on LinkedIn",
+    items: [
+      {
+        quote:
+          "Antonin is technically solid, but above all impact-driven. He does not just do the job: he digs into the stakes behind every topic and delivers something that actually creates value. Pragmatic, reliable and structured, he moves fast without losing sight of what matters.",
+        name: "Ciprian Noaghiu",
+        role: "CEO, relevanC",
+      },
+      {
+        quote:
+          "Antonin stands out for his strong pedagogical skills: despite a high level of technical expertise, he is able to explain complex topics in a clear and accessible way to non-technical stakeholders.",
+        name: "Paula Alves",
+        role: "Head of AdOps, retail media",
+      },
+      {
+        quote:
+          "Where many before him failed, Anton succeeded, bringing about significant improvements in a short span. What sets him apart is his leadership, skill in stakeholder management, strategy, attention to detail and vision for the long haul.",
+        name: "Azeem Abu Bakar",
+        role: "Managing Director, FMT News",
+      },
+    ],
+  },
+  fr: {
+    title: "Ce qu'en disent les clients",
+    readOn: "Lire sur LinkedIn",
+    items: [
+      {
+        quote:
+          "Antonin est quelqu'un de solide techniquement, mais surtout orienté impact. Il ne se contente pas de « faire le job » : il cherche à comprendre les enjeux derrière chaque sujet et à produire quelque chose qui crée réellement de la valeur. Pragmatique, fiable et structuré, il avance vite sans perdre de vue l'essentiel.",
+        name: "Ciprian Noaghiu",
+        role: "CEO, relevanC",
+      },
+      {
+        quote:
+          "Antonin se distingue par ses grandes qualités pédagogiques : malgré un haut niveau d'expertise technique, il sait expliquer des sujets complexes de façon claire et accessible à des interlocuteurs non techniques.",
+        name: "Paula Alves",
+        role: "Head of AdOps, retail media",
+      },
+      {
+        quote:
+          "Là où beaucoup avaient échoué avant lui, Anton a réussi, avec des améliorations significatives en peu de temps. Ce qui le distingue : son leadership, sa gestion des parties prenantes, sa stratégie, son souci du détail et sa vision de long terme.",
+        name: "Azeem Abu Bakar",
+        role: "Managing Director, FMT News",
+      },
+    ],
+  },
+}
 
 const STICKY_NOTES = {
   en: [
-    "100M+ pages processed",
+    "AI search over 100M+ pages",
     "Top 5 App Store, 1M+ downloads",
     "Built & sold multiple SaaS",
     "20+ clients · 12\u00A0years independent",
   ],
   fr: [
-    "100M+ pages traitées",
+    "Recherche IA sur 100M+ pages",
     "Top 5 App Store, 1M+ DL",
     "Plusieurs SaaS créés et revendus",
     "20+ clients · 12\u00A0ans freelance",
@@ -61,10 +111,11 @@ const COMPANIES = [
 ]
 const COMPANIES_DOUBLED = [...COMPANIES, ...COMPANIES]
 
+// Material tonal containers, aligned with the hero stat cards
 const ROLE_STYLES = [
-  { backgroundColor: "#fce4ec" },
-  { backgroundColor: "#e0f2f1" },
-  { backgroundColor: "#e3f2fd" },
+  { backgroundColor: "#ffe3cc" },
+  { backgroundColor: "#d3f2da" },
+  { backgroundColor: "#d8e6ff" },
 ]
 
 const ROLES = {
@@ -76,7 +127,7 @@ const ROLES = {
     },
     {
       title: "AI for Business",
-      desc: "I help SMBs and enterprises adopt AI: RAG, semantic search, LLM integrations, workflow automation — finding the right tool without overengineering. Built and sold privately.ai (Document AI SaaS).",
+      desc: "I help SMBs and enterprises adopt AI: RAG, semantic search, LLM integrations, workflow automation, finding the right tool without overengineering. Built and sold privately.ai (Document AI SaaS).",
     },
     {
       title: "Solutions Architect",
@@ -100,7 +151,7 @@ const ROLES = {
     },
     {
       title: "IA pour l'Entreprise",
-      desc: "J'accompagne PME, TPE et grands groupes dans l'adoption IA : RAG, recherche sémantique, intégrations LLM, automatisation — trouver le bon outil sans surdimensionner. J'ai aussi conçu et vendu privately.ai (SaaS Document AI).",
+      desc: "J'accompagne PME, TPE et grands groupes dans l'adoption IA : RAG, recherche sémantique, intégrations LLM, automatisation. Trouver le bon outil sans surdimensionner. J'ai aussi conçu et vendu privately.ai (SaaS Document AI).",
     },
     {
       title: "Architecte Solutions",
@@ -125,11 +176,10 @@ const CONTENT = {
     subtitle: <>Software Engineer · AI &amp; Solutions Architect</>,
     headline: (
       <>
-        AI systems, cloud platforms, and SaaS{" "}
-        <span className="portfolio-headline-accent">
-          from design to production
-        </span>
-        .
+        AI systems, cloud platforms, and SaaS from{" "}
+        <span className="portfolio-headline-accent">design</span> to{" "}
+        <span className="portfolio-headline-accent">production</span>
+        <span className="portfolio-headline-accent">.</span>
       </>
     ),
     worked: "Companies I've worked with",
@@ -147,11 +197,10 @@ const CONTENT = {
     subtitle: <>Développeur · IA &amp; Architecte Solutions</>,
     headline: (
       <>
-        Systèmes IA, plateformes cloud et SaaS{" "}
-        <span className="portfolio-headline-accent">
-          de la conception à la production
-        </span>
-        .
+        Systèmes IA, plateformes cloud et SaaS de la{" "}
+        <span className="portfolio-headline-accent">conception</span> à la{" "}
+        <span className="portfolio-headline-accent">production</span>
+        <span className="portfolio-headline-accent">.</span>
       </>
     ),
     worked: "Entreprises avec lesquelles j'ai travaillé",
@@ -259,7 +308,15 @@ const IndexPage = ({ data }) => {
             className={`sticky-note sticky-note--${STICKY_NOTE_STYLES[i].pos}`}
             style={STICKY_NOTE_STYLES[i].style}
           >
-            {text}
+            {/* " · " marks a line break on the desktop stat cards */}
+            <span>
+              {text.split(" · ").map((part, j) => (
+                <React.Fragment key={j}>
+                  {j > 0 && <br />}
+                  {part}
+                </React.Fragment>
+              ))}
+            </span>
           </div>
         ))}
         <div className="portfolio-hero">
@@ -310,6 +367,40 @@ const IndexPage = ({ data }) => {
         ))}
       </section>
 
+      <section className="testi-section">
+        <h2 className="testi-title">{TESTIMONIALS[lang].title}</h2>
+        <div className="testi-grid">
+          {TESTIMONIALS[lang].items.map(item => (
+            <figure key={item.name} className="testi-card">
+              <a
+                className="testi-link"
+                href={TESTIMONIALS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackEvent("click", "social", "testimonial_linkedin")}
+              >
+                {TESTIMONIALS[lang].readOn} ↗
+              </a>
+              <blockquote className="testi-quote">{item.quote}</blockquote>
+              <figcaption className="testi-who">
+                <img
+                  className="testi-avatar"
+                  src={TESTI_PHOTOS[item.name]}
+                  alt={item.name}
+                  width="44"
+                  height="44"
+                  loading="lazy"
+                />
+                <div className="testi-id">
+                  <span className="testi-name">{item.name}</span>
+                  <span className="testi-role">{item.role}</span>
+                </div>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
       <SelectedWork />
 
       <section className="cta-bottom">
@@ -329,11 +420,44 @@ const IndexPage = ({ data }) => {
 
 export default IndexPage
 
+const PERSON_JSONLD = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Antonin Ribeaud",
+  url: "https://antonin.cool",
+  jobTitle: "Software Engineer, AI & Solutions Architect",
+  description:
+    "AI systems, cloud platforms, and SaaS, from design to production. Independent software engineer since 2014.",
+  knowsAbout: [
+    "Artificial Intelligence",
+    "Retrieval-Augmented Generation",
+    "Solutions Architecture",
+    "Cloud Platforms",
+    "Google Cloud Platform",
+    "Terraform",
+    "React",
+    "TypeScript",
+    "Python",
+    "FastAPI",
+    "Product Management",
+  ],
+  sameAs: [
+    "https://www.linkedin.com/in/antoninribeaud/",
+    "https://github.com/antonhansel",
+    "https://twitter.com/antoninarto",
+  ],
+}
+
 export const Head = () => (
   <SEO
     title="Antonin Ribeaud | AI & Solutions Architect"
     description="AI systems, cloud platforms, and SaaS, from design to production. Independent since 2014."
-  />
+  >
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(PERSON_JSONLD) }}
+    />
+  </SEO>
 )
 
 export const pageQuery = graphql`
